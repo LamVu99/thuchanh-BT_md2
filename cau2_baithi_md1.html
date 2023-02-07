@@ -6,27 +6,17 @@
 </head>
 <body>
 <script>
-        function insertNumberToArray(arr,x,index){
-            let newarr = []
-            if(index < 0 || index > arr.length){
-                newarr = arr
-            } else {
-                for (let i = 0; i <= arr.length; i++) {
-                    if (i < index) {
-                        newarr.push(arr[i])
-                    } else if(i == index){
-                        newarr.push(x)
-                    }else {
-                        newarr.push(arr[i - 1])
-                    }
-                }
-            } return newarr
-        }
-        let arr = [1,2,3,4,5]
-        let x = 5
-        let index = 3
-        console.log(insertNumberToArray(arr,x,index))
+    let arr = [1,2,3,4,5,6];
 
+    function insertNumberToArray(arr, x,i) {
+        if(i < 0 || i > arr.length) {
+            return arr;
+        } else {
+            arr.splice(i,0,x);
+            return arr;
+        }
+    }
+    console.log(insertNumberToArray(arr, 0, 3));
 </script>
 </body>
 </html>
