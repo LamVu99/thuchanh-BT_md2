@@ -8,11 +8,11 @@
 <script>
     let arr = [1,2,3,4,5,6];
 
-    function insertNumberToArray(arr, x,i) {
-        if(i < 0 || i > arr.length) {
+    function insertNumberToArray(arr, x,index) {
+        if(index < 0 || index > arr.length) {
             return arr;
         } else {
-            arr.splice(i,0,x);
+            arr.splice(index,0,x);
             return arr;
         }
     }
