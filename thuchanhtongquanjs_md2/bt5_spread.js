@@ -13,4 +13,4 @@ function recordOrders(time) {
     customerOrder.push({time, birds: Array.prototype.slice.call(arguments, 1)})
 }
 recordOrders(new Date, "coffee", "yaourt", "pizza")
-console.log(customerOrder)
+console.log(customerOgit remote rm originrder)
