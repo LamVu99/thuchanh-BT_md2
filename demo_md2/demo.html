@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function fun(...input){
+    let total = input.reduce((a,b) => {
+      return a + b;
+    }, 0)
+    return total;
+  }
+
+  console.log(fun(1,2)); // 3
+  console.log(fun(1,2,3)); // 6
+  console.log(fun(1,2,3,4,5)); // 15
+</script>
+</body>
+</html>
