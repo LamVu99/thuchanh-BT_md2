@@ -1,9 +1,4 @@
-enum Gender {
-    MALE = 'MALE',
-    FEMALE = 'FEMALE',
-    OTHER = 'OTHER'
-}
-
+type Gender = 'MALE' | 'FEMALE' | 'OTHER'
 class Employee {
     ID: number;
     fullname: string;
@@ -19,7 +14,7 @@ class Employee {
     phonenumber: string) {
         this.ID = ID;
         this.fullname = fullname;
-        this.gender = Gender.FEMALE;
+        this.gender = gender;
         this.birthday = birthday;
         this.email = email;
         this.phonenumber = phonenumber;
@@ -78,7 +73,6 @@ findEmployee(ID: number) {
     return index;
 }
 deleteEmployee(ID: number) {
-    console.log(this.findEmployee(ID))
         if (this.findEmployee(ID) != -1) {
             this.employees.splice(this.findEmployee(ID), 1)
         }
@@ -100,16 +94,16 @@ deleteEmployee(ID: number) {
         }
     }
 }
-let employee1 = new Employee(1123, 'LamVu1', Gender.MALE, new Date(1999,6,8),'dange680123@gmail.com', '0903244451')
-let employee2 = new Employee(1124, 'LamVu2', Gender.MALE, new Date(1998,7,4),'dange680131@gmail.com', '0903244452')
-let employee3 = new Employee(1125, 'LamVu3', Gender.MALE, new Date(1997,8,5),'dange68021@gmail.com', '0903244453')
-let employee4 = new Employee(1126, 'LamVu4', Gender.MALE, new Date(1996,9,3),'dange680411@gmail.com', '0903244454')
+let employee1 = new Employee(1123, 'LamVu1', 'MALE', new Date(1999,6,8),'dange680123@gmail.com', '0903244451')
+let employee2 = new Employee(1124, 'LamVu2', 'MALE', new Date(1998,7,4),'dange680131@gmail.com', '0903244452')
+let employee3 = new Employee(1125, 'LamVu3', 'FEMALE', new Date(1997,8,5),'dange68021@gmail.com', '0903244453')
+let employee4 = new Employee(1126, 'LamVu4', 'OTHER', new Date(1996,9,3),'dange680411@gmail.com', '0903244454')
 let emPloyess = new EmployeeManager()
 emPloyess.add(employee1)
 emPloyess.add(employee2)
 emPloyess.add(employee3)
 emPloyess.add(employee4)
-emPloyess.updateEmployee(1126, 'LamVu21',Gender.OTHER, new Date(1974,5,4), 'dange1995@gmail.com', '0323134231')
-emPloyess.updateEmployee(1125, 'LamVu213',Gender.OTHER, new Date(1974,5,4), 'dange1995@gmail.com', '0323134231')
+emPloyess.updateEmployee(1126, 'LamVu21','OTHER', new Date(1974,5,4), 'dange1995@gmail.com', '0323134231')
+emPloyess.updateEmployee(1125, 'LamVu213','MALE', new Date(1974,5,4), 'dange1995@gmail.com', '0323134231')
 emPloyess.deleteEmployee(1123)
 console.log(emPloyess.getList())
